@@ -35,7 +35,7 @@ class TopConfig:
         #  the ith network in the BP-CNN-BP-CNN-... structure.
 
         # Trianing
-        self.normality_test_enabled = True
+        self.normality_test_enabled = False
         self.normality_lambda = 1
         self.SNR_set_gen_data = np.array([0,0.5,1,1.5,2,2.5,3], dtype=np.float32)
 
@@ -43,7 +43,7 @@ class TopConfig:
         self.eval_SNRs = np.array([0,0.5,1,1.5,2,2.5,3], np.float32)
         self.same_model_all_nets = False  # denote whether the same model parameters for all denoising networks. If true and cnn_net_number > 1, we are testing the performance
         #  of iteration between a BP and a denoising network.
-        self.analyze_res_noise = True
+        self.analyze_res_noise = False
         self.update_llr_with_epdf = False  # whether to update the initial LLR of the next BP decoding with the empirical distribution. Otherwise, the LLR is updated by
         # viewing the residual noise follows a Gaussian distritbution
 
