@@ -49,9 +49,9 @@ class TopConfig:
 
 
     def parse_cmd_line(self, argv):
-        if len(argv) == 1:
+        if len(argv) == 2:
             return
-        id = 2
+        id = 0
         while id < len(argv):
             if argv[id]=='-Func':
                 self.function = argv[id+1]
