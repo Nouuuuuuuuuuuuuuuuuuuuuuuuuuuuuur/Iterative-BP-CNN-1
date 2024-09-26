@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 
 ## TopConfig defines some top configurations. Other configurations are set based on TopConfig.
@@ -110,7 +111,7 @@ class TopConfig:
                 print('SNR set for generating data is set to %s.' % np.array2string(self.SNR_set_gen_data))
             else:
                 print('Invalid parameter %s!' % argv[id])
-                exit(0)
+                sys.exit(0)
             id = id + 2
 
 
@@ -171,10 +172,10 @@ class TrainingConfig:
         ## parameter check
         if self.test_sample_num % self.test_minibatch_size != 0:
             print('Total_test_samples must be a multiple of test_minibatch_size!')
-            exit(0)
+            sys.exit(0)
         if self.training_sample_num % self.training_minibatch_size != 0:
             print('Total_training_samples must be a multiple of training_minibatch_size!')
-            exit(0)
+            sys.exit(0)
         if self.training_minibatch_size % np.size(self.SNR_set_gen_data)!=0 or self.test_minibatch_size % np.size(self.SNR_set_gen_data)!=0:
             print('A batch of training or test data should contains equal amount of data under different CSNRs!')
-            exit(0)
+            sys.exit(0)
